@@ -81,8 +81,12 @@ namespace AreEyeP.Controllers
                 if (user != null && VerifyPassword(user.Password, model.Password))
                 {
                     // User is authenticated
-                    // Set a session or cookie if needed
-                    return RedirectToAction("Index", "Home");
+                    // Set session variables
+                    HttpContext.Session.SetString("Username", user.Username);
+                    HttpContext.Session.SetInt32("UserId", user.Id);
+
+                    // Redirect to the Dashboard page
+                    return RedirectToAction("Dashboard", "Home");
                 }
 
                 // Invalid login attempt
@@ -90,6 +94,17 @@ namespace AreEyeP.Controllers
             }
 
             return View(model);
+        }
+
+        // GET: /Account/Logout
+        [HttpGet]
+        public IActionResult Logout()
+        {
+            // Clear the session
+            HttpContext.Session.Clear();
+
+            // Redirect to the login page
+            return RedirectToAction("Login", "Account");
         }
 
         // Utility method for hashing passwords

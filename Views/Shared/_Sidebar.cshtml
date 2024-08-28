@@ -1,0 +1,19 @@
+﻿<div style="background-color: #01957D; color: #FFFFFF; width: 250px; height: 100vh; position: fixed; display: flex; flex-direction: column; align-items: center; padding-top: 20px;">
+    <img src="~/images/profile_placeholder.png" alt="Profile Image" style="width: 100px; height: 100px; border-radius: 50%; margin-bottom: 10px;">
+    <h4>Client</h4>
+    <ul style="list-style-type: none; padding: 0; width: 100%; margin-top: 20px;">
+        <li style="padding: 10px;"><a href="@Url.Action("Dashboard", "Home")" style="color: #FFFFFF; text-decoration: none; display: flex; align-items: center;"><i class="fa fa-home" style="margin-right: 10px;"></i> Home</a></li>
+        <li style="padding: 10px;"><a href="@Url.Action("Manage", "Relatives")" style="color: #FFFFFF; text-decoration: none; display: flex; align-items: center;"><i class="fa fa-users" style="margin-right: 10px;"></i> Manage Relatives</a></li>
+        <li style="padding: 10px;">
+            <a href="@Url.Action("BurialApplication", "Home")" style="color: #FFFFFF; text-decoration: none; display: flex; align-items: center;">
+                <i class="fa fa-cross" style="margin-right: 10px;"></i> Application Burial
+            </a>
+        </li>
+        <li style="padding: 10px;"><a href="@Url.Action("Request", "Service")" style="color: #FFFFFF; text-decoration: none; display: flex; align-items: center;"><i class="fa fa-tools" style="margin-right: 10px;"></i> Service Request</a></li>
+        <li style="padding: 10px;"><a href="@Url.Action("Index", "Renewals")" style="color: #FFFFFF; text-decoration: none; display: flex; align-items: center;"><i class="fa fa-redo-alt" style="margin-right: 10px;"></i> Renewals</a></li>
+        <li style="padding: 10px;"><a href="@Url.Action("Index", "Payments")" style="color: #FFFFFF; text-decoration: none; display: flex; align-items: center;"><i class="fa fa-money-check-alt" style="margin-right: 10px;"></i> Payments</a></li>
+        <li style="padding: 10px;"><a href="@Url.Action("Index", "Notifications")" style="color: #FFFFFF; text-decoration: none; display: flex; align-items: center;"><i class="fa fa-bell" style="margin-right: 10px;"></i> Notification</a></li>
+    </ul>
+
+    <a href="/Account/Logout" class="btn btn-danger" style="margin-top: auto; margin-bottom: 20px;">SIGN OUT <i class="fa fa-sign-out-alt"></i></a>
+</div>

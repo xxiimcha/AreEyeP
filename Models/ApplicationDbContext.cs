@@ -10,5 +10,6 @@ namespace AreEyeP.Models
         }
 
         public DbSet<User> Users { get; set; }
+        public DbSet<BurialApplication> BurialApplications { get; set; } // Add this line
     }
 }

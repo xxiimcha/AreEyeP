@@ -1,0 +1,112 @@
+﻿@model AreEyeP.Models.BurialApplicationViewModel
+
+<div style="display: flex;">
+    <!-- Sidebar -->
+    @Html.Partial("_Sidebar")
+
+    <!-- Main Content -->
+    <div style="margin-left: 250px; padding: 20px; width: calc(100% - 250px); background-color: #FFFFFF;">
+        <h2 style="color: #01957D; margin-bottom: 20px;">Burial Application</h2>
+        <form asp-action="SubmitBurialApplication" method="post" enctype="multipart/form-data">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <h3 style="color: #01957D;">Applicant Information</h3>
+                    <label asp-for="ApplicantFirstName" style="color: #333;"></label>
+                    <input asp-for="ApplicantFirstName" class="form-control" />
+                    <span asp-validation-for="ApplicantFirstName" class="text-danger"></span>
+
+                    <label asp-for="ApplicantLastName" style="color: #333;"></label>
+                    <input asp-for="ApplicantLastName" class="form-control" />
+                    <span asp-validation-for="ApplicantLastName" class="text-danger"></span>
+
+                    <label asp-for="Address" style="color: #333;"></label>
+                    <input asp-for="Address" class="form-control" />
+                    <span asp-validation-for="Address" class="text-danger"></span>
+
+                    <label asp-for="RelationshipToDeceased" style="color: #333;"></label>
+                    <input asp-for="RelationshipToDeceased" class="form-control" />
+                    <span asp-validation-for="RelationshipToDeceased" class="text-danger"></span>
+
+                    <label asp-for="ContactInformation" style="color: #333;"></label>
+                    <input asp-for="ContactInformation" class="form-control" />
+                    <span asp-validation-for="ContactInformation" class="text-danger"></span>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <h3 style="color: #01957D;">Deceased Information</h3>
+                    <label asp-for="DeceasedFirstName" style="color: #333;"></label>
+                    <input asp-for="DeceasedFirstName" class="form-control" />
+                    <span asp-validation-for="DeceasedFirstName" class="text-danger"></span>
+
+                    <label asp-for="DeceasedLastName" style="color: #333;"></label>
+                    <input asp-for="DeceasedLastName" class="form-control" />
+                    <span asp-validation-for="DeceasedLastName" class="text-danger"></span>
+
+                    <label asp-for="DeceasedGender" style="color: #333;"></label>
+                    <div style="color: #333;">
+                        <label><input asp-for="DeceasedGender" type="radio" value="Male" /> Male</label>
+                        <label style="margin-left: 20px;"><input asp-for="DeceasedGender" type="radio" value="Female" /> Female</label>
+                    </div>
+                    <span asp-validation-for="DeceasedGender" class="text-danger"></span>
+
+                    <label asp-for="DeceasedDateOfBirth" style="color: #333;"></label>
+                    <input asp-for="DeceasedDateOfBirth" type="date" class="form-control" />
+                    <span asp-validation-for="DeceasedDateOfBirth" class="text-danger"></span>
+
+                    <label asp-for="DeceasedDateOfDeath" style="color: #333;"></label>
+                    <input asp-for="DeceasedDateOfDeath" type="date" class="form-control" />
+                    <span asp-validation-for="DeceasedDateOfDeath" class="text-danger"></span>
+
+                    <label asp-for="CauseOfDeath" style="color: #333;"></label>
+                    <input asp-for="CauseOfDeath" class="form-control" />
+                    <span asp-validation-for="CauseOfDeath" class="text-danger"></span>
+
+                    <label asp-for="Religion" style="color: #333;"></label>
+                    <input asp-for="Religion" class="form-control" />
+                    <span asp-validation-for="Religion" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <h3 style="color: #01957D;">Burial Details</h3>
+                    <label asp-for="BurialDate" style="color: #333;"></label>
+                    <input asp-for="BurialDate" type="date" class="form-control" />
+                    <span asp-validation-for="BurialDate" class="text-danger"></span>
+
+                    <div class="form-group col-md-6">
+                        <label asp-for="BurialStartTime" style="color: #333;">Start Time</label>
+                        <input asp-for="BurialStartTime" type="time" class="form-control" />
+                        <span asp-validation-for="BurialStartTime" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label asp-for="BurialEndTime" style="color: #333;">End Time</label>
+                        <input asp-for="BurialEndTime" type="time" class="form-control" />
+                        <span asp-validation-for="BurialEndTime" class="text-danger"></span>
+                    </div>
+
+                    <label asp-for="SpecialInstructions" style="color: #333;"></label>
+                    <textarea asp-for="SpecialInstructions" class="form-control"></textarea>
+                    <span asp-validation-for="SpecialInstructions" class="text-danger"></span>
+
+                    <label asp-for="AttachedRequirement" style="color: #333;"></label>
+                    <input asp-for="AttachedRequirement" type="file" class="form-control" />
+                    <span asp-validation-for="AttachedRequirement" class="text-danger"></span>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="background-color: #01957D; border: none;">Submit</button>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Popper.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.6.0/js/bootstrap.bundle.min.js"></script>
+}
+w
