@@ -1,0 +1,92 @@
+﻿@model AreEyeP.Models.RegisterViewModel
+
+<div style="background-color: #3E3E3E; height: 100vh; display: flex; justify-content: center; align-items: center;">
+    <div style="width: 60%; background-color: #FFFFFF; border-radius: 15px; box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1); display: flex;">
+        <div style="width: 40%; background-color: #01957D; border-radius: 15px 0px 0px 15px; display: flex; justify-content: center; align-items: center; padding: 50px;">
+            <div style="text-align: center;">
+                <img src="~/images/logo.png" alt="Logo" style="width: 120px; margin-bottom: 20px;">
+                <h3 style="color: #FFFFFF; font-weight: 600;">ARE EYE P</h3>
+                <p style="color: #FFFFFF;">CEMETERY MANAGEMENT</p>
+            </div>
+        </div>
+        <div style="width: 60%; padding: 50px;">
+            <h2 style="color: #01957D; font-weight: 600; margin-bottom: 10px;">Create a New Account</h2>
+            <p style="color: #555; margin-bottom: 30px;">Fill in the details to create your account.</p>
+
+            <form asp-action="Register" method="post">
+                <div class="form-row" style="margin-bottom: 20px;">
+                    <div class="form-group" style="width: 48%; float: left; margin-right: 4%;">
+                        <label for="FirstName">First Name</label>
+                        <input asp-for="FirstName" class="form-control" placeholder="First Name" />
+                        <span asp-validation-for="FirstName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group" style="width: 48%; float: left;">
+                        <label for="LastName">Last Name</label>
+                        <input asp-for="LastName" class="form-control" placeholder="Last Name" />
+                        <span asp-validation-for="LastName" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group" style="margin-bottom: 20px;">
+                    <label for="Birthday">Birthday</label>
+                    <div class="form-row">
+                        <div style="width: 30%; float: left; margin-right: 3%;">
+                            <input asp-for="Day" class="form-control" placeholder="Day" />
+                        </div>
+                        <div style="width: 30%; float: left; margin-right: 3%;">
+                            <input asp-for="Month" class="form-control" placeholder="Month" />
+                        </div>
+                        <div style="width: 33%; float: left;">
+                            <input asp-for="Year" class="form-control" placeholder="Year" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group" style="margin-bottom: 20px;">
+                    <label>Your Gender</label>
+                    <div>
+                        <label>
+                            <input asp-for="Gender" type="radio" value="Male" />
+                            Male
+                        </label>
+                        <label style="margin-left: 20px;">
+                            <input asp-for="Gender" type="radio" value="Female" />
+                            Female
+                        </label>
+                    </div>
+                    <span asp-validation-for="Gender" class="text-danger"></span>
+                </div>
+
+                <div class="form-group" style="margin-bottom: 20px;">
+                    <label for="ContactNumber">Contact Number</label>
+                    <input asp-for="ContactNumber" class="form-control" placeholder="Contact Number" />
+                    <span asp-validation-for="ContactNumber" class="text-danger"></span>
+                </div>
+
+                <div class="form-group" style="margin-bottom: 20px;">
+                    <label for="Email">Email Address</label>
+                    <input asp-for="Email" class="form-control" placeholder="Enter your Email" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+
+                <div class="form-group" style="margin-bottom: 20px;">
+                    <label for="Username">Username</label>
+                    <input asp-for="Username" class="form-control" placeholder="Enter your Username" />
+                    <span asp-validation-for="Username" class="text-danger"></span>
+                </div>
+
+                <div class="form-group" style="margin-bottom: 20px;">
+                    <label for="Password">Password</label>
+                    <input asp-for="Password" class="form-control" type="password" placeholder="Enter your Password" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block" style="width: 100%; padding: 10px; background-color: #01957D; border: none; color: #FFFFFF; border-radius: 5px; font-weight: 600; cursor: pointer;">REGISTER</button>
+            </form>
+
+            <p style="margin-top: 20px; text-align: center; font-size: 0.9rem;">
+                Already have an account? <a href="@Url.Action("Login", "Account")" style="color: #01957D; text-decoration: none;">Login here</a>
+            </p>
+        </div>
+    </div>
+</div>
